@@ -10,6 +10,7 @@
         <module name="springboot-mybatis" />
         <module name="springboot-redis" />
         <module name="springboot-cache" />
+        <module name="springboot-resttemplate" />
         <module name="springboot-quartz" />
       </profile>
     </annotationProcessing>
@@ -18,6 +19,7 @@
       <module name="springboot-mybatis" target="1.8" />
       <module name="springboot-quartz" target="1.8" />
       <module name="springboot-redis" target="1.8" />
+      <module name="springboot-resttemplate" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -26,6 +28,7 @@
       <module name="springboot-mybatis" options="-parameters" />
       <module name="springboot-quartz" options="-parameters" />
       <module name="springboot-redis" options="-parameters" />
+      <module name="springboot-resttemplate" options="-parameters" />
     </option>
   </component>
 </project>
