@@ -1,0 +1,46 @@
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/dreamhom?useSSL=false&serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
+    username: root
+    password: nbuser
+
+  cache:
+    type: REDIS
+    redis:
+      cache-null-values: false
+      time-to-live: 600000ms
+      use-key-prefix: true
+    cache-names: userCache,allUsersCache
+
+  redis:
+    host: 127.0.0.1
+    port: 6380
+    database: 2
+    lettuce:
+      shutdown-timeout: 200ms
+      pool:
+        max-active: 7
+        max-idle: 7
+        min-idle: 2
+        max-wait: -1ms
+
+mybatis-plus:
+  mapper-locations: classpath*:com/kennen/springbootcache/dao/repository/mapping/*.xml
+  typeAliasesPackage: com.kennen.springbootcache.dao.entity
+  global-config:
+    id-type: 0
+    db-column-underline: false
+    refresh-mapper: true
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: true
+    lazyLoadingEnabled: true
+    multipleResultSetsEnabled: true
+
+logging:
+  level:
+    ROOT: INFO
+    com:
+      example: DEBUG
+  file:
+    name: D:/logs/springboot-cache.log
